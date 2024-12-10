@@ -1,0 +1,12 @@
+
+<div class="box">
+  @for (film of films; track $index) {
+    <app-card [title]="film.name" [id]="film.id" (cardClicked)="onCardClicked($event)"></app-card>
+  }
+
+  {{cart | json}}
+
+</div>
+
+
+
