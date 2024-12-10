@@ -1,1 +1,14 @@
 <p>company works!</p>
+
+<!-- 
+@if(todos?.length > 0) {
+    <pre>{{todos | json}}</pre>
+} @else {
+   loading... 
+} -->
+
+{{ todos$ | async | json}}
+
+<button (click)="getTodos()">NAČTI TODOS</button>
+
+<button (click)="getTodosAsync()">NAČTI TODOS async</button>

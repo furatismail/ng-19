@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CardComponent } from '../../components/card/card.component';
 import { Film } from '../../shared/interfaces/film.interface';
 import { JsonPipe } from '@angular/common';
-import { DataSharingService } from '../../data-sharing.service';
+import { DataSharingService } from '../../shared/services/data-sharing/data-sharing.service';
 
 @Component({
   selector: 'app-home',

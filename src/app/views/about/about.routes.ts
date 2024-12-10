@@ -7,11 +7,11 @@ export const AboutRoutes: Routes = [
     },
     {
         path: "company",
-        loadComponent: () => import('./company/company.component').then(component => component.CompanyComponent)
+        loadComponent: () => import('./company/company.component').then(component => component.CompanyComponent),
     },
     {
         path: "",
-        redirectTo: "team",
+        redirectTo: "company",
         pathMatch: "full"
     }
 ]
