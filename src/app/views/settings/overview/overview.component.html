@@ -1,0 +1,23 @@
+<!-- <button (click)="togglePanel()">{{(isPanelShown) ? 'Odkryt' : 'Zakryt'}} panel komponentu</button>
+@if(isPanelShown) {
+    <app-panel></app-panel>
+} @else {
+    <app-statistics></app-statistics>
+} -->
+
+<h1>Overview komponenta</h1>
+<div style="border: 2px solid blue;">
+<nav class="center">
+  <a class="button" routerLink="statistics/1"> Stats (relativní link) </a>
+  <a class="button" routerLink="/settings/panel"> Panel (absolutní link) </a>
+</nav>
+
+</div>
+
+<div style="border: 2px solid red;">
+  <h2>Children komponenty</h2>
+<router-outlet></router-outlet>
+</div>
+
+
+<button (click)="navigate()">ZPET DOMU</button>
