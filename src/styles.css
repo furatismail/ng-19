@@ -117,3 +117,5 @@ button:disabled {
     cursor: not-allowed;
     box-shadow: none;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

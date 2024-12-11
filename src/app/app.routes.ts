@@ -2,6 +2,8 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './views/home';
 import { UserComponent } from './views/form/user/user.component';
 import { DetailComponent } from './views/users/detail/detail.component';
+import { ReactiveUserComponent } from './views/form/reactive-user/reactive-user.component';
+import { SkillsFormComponent } from './views/skills/skills.component';
 
 export const routes: Routes = [
     {
@@ -32,6 +34,14 @@ export const routes: Routes = [
     {
         path: "detail",
         component: DetailComponent
+    },
+    {
+        path: "reactive-user",
+        component: ReactiveUserComponent
+    },
+    {
+        path: "skills",
+        component: SkillsFormComponent
     },
 
 ];

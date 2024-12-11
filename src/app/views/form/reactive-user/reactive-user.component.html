@@ -1,0 +1,74 @@
+<div class="form-container">
+  <h1>Reactive form</h1>
+
+  <!-- Name: <pre>{{nameCtrl?.errors | json}}</pre> <br>   -->
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Meno</label>
+      <input
+        class="form-input"
+        type="text"
+        name="name"
+        formControlName="name"
+        placeholder="Celé meno"
+      />
+      <div
+        class="error"
+        *ngIf="
+          form.get('name')?.errors?.required && (nameCtrl?.touched || submitted)
+        "
+      >
+        Toto pole je povinne
+      </div>
+      <!-- <div class="error" *ngIf="nameCtrl?.errors?.pattern && (nameCtrl?.touched || formRef.submitted)">Nepovolene znaky</div>
+        <div class="error" *ngIf="nameCtrl?.errors?.blackListed && (nameCtrl?.touched || formRef.submitted)">Toto meno je zakazane</div> -->
+    </div>
+
+    <!-- {{form?.controls?.name?.errors| json}} -->
+
+    <div class="form-group">
+      <label>Zobrazit e-mailové pole?</label>
+      <div>
+        <label>
+          <input
+            (change)="getShowEmail()"
+            type="radio"
+            formControlName="showEmail"
+            [value]="true"
+          />
+          Ano
+        </label>
+        <label>
+          <input
+            (change)="getShowEmail()"
+            type="radio"
+            formControlName="showEmail"
+            [value]="false"
+          />
+          Ne
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group" *ngIf="form.get('showEmail')?.value">
+      <label for="email">E-mail</label>
+      <input
+        class="form-input"
+        type="text"
+        name="email"
+        formControlName="email"
+        placeholder="E-mail"
+        required
+      />
+      <div
+        class="error"
+        *ngIf="emailCtrl?.errors?.required && (emailCtrl?.touched || submitted)"
+      >
+        Toto pole je povinne
+      </div>
+    </div>
+
+    <button type="submit" class="form-btn">Odeslat</button>
+  </form>
+</div>

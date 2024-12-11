@@ -1,0 +1,47 @@
+import { JsonPipe, NgIf } from '@angular/common';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+
+export interface UserForm {
+  name: FormControl<string | null>,
+  email: FormControl<string | null>
+}
+
+@Component({
+  selector: 'app-reactive-user',
+  imports: [ReactiveFormsModule, JsonPipe, NgIf],
+  templateUrl: './reactive-user.component.html',
+  styleUrl: './reactive-user.component.css'
+})
+export class ReactiveUserComponent {
+  form: FormGroup<UserForm> = new FormGroup({
+    name: new FormControl<string | null>('', [Validators.required, Validators.minLength(2)]),
+    email: new FormControl<string | null>('', [Validators.required])
+  });
+  submitted: boolean = false;
+
+  get nameCtrl() {
+    return this.form.controls.name;
+  }
+
+  get emailCtrl() {
+    return this.form.controls.email;
+  }
+
+  onSubmit() {
+    this.submitted = true;
+    console.log('Co je vlastně form (FormGroup) zač?', this.form)
+
+    const value = this.form.value;
+    const valid = this.form.valid;
+    console.log(value)
+    console.log(valid)
+
+  }
+}
+
+
+
+
+
+

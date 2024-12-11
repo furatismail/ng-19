@@ -1,0 +1,35 @@
+import { JsonPipe, NgFor } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormArray, ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-skills-form',
+  templateUrl: './skills.component.html',
+  styleUrls: ['./skills.component.css'],
+  imports: [FormsModule, NgFor, JsonPipe]
+})
+export class SkillsFormComponent {
+  skills: { skillName: string, proficiency: string }[] = [
+   
+  ];
+
+  addSkill(): void {
+    this.skills.push({ skillName: '', proficiency: '' });
+  }
+
+  removeSkill(index: number): void {
+    this.skills.splice(index, 1);
+  }
+
+  onSubmit(form: any): void {
+    console.log(form.value);
+
+
+    const skills = this.transformSimpleMapToArray(form.value)
+    console.log(skills)
+  }
+
+  private transformSimpleMapToArray(mapObject: any) {
+    return Object.keys(mapObject).map((index, v) => mapObject[index]);
+  }
+}
