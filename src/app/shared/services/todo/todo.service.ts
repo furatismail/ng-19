@@ -15,6 +15,7 @@ export class TodoService {
     return this.httpClient.get<Todo[]>('https://jsonplaceholder.typicode.com/todos').pipe(delay(3000))
   }
 
+
   // getAllAsync() : Promise<Todo[]> {
   //   return lastValueFrom(this.httpClient.get<Todo[]>('https://jsonplaceholder.typicode.com/todos'))
   // }

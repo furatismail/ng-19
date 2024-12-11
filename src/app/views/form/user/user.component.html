@@ -1,16 +1,49 @@
 <div class="form-container">
   <h1>Template driven form</h1>
-  <form>
+
+  Name: <pre>{{nameCtrl?.errors | json}}</pre> <br>
+
+  <h2>ngForm vlastnosti</h2>
+  <pre>invalid: {{formRef?.invalid}}</pre><br>
+  <pre>valid: {{formRef?.valid}}</pre><br>
+  <pre>touched: {{formRef?.touched}}</pre><br>
+  <pre>untouched: {{formRef?.untouched}}</pre><br>
+
+
+  <form #formRef="ngForm" (ngSubmit)="onSubmit(formRef)">
     <div class="form-group">
       <label for="name">Meno</label>
       <input
         class="form-input"
         type="text"
-        name="fullname2"
+        name="name"
         [(ngModel)]="user.name"
         placeholder="Celé meno"
+        required
+        #nameCtrl="ngModel"
+        pattern="^[a-zA-Z\s]+$"
+        (ngModelChange)="validateBlackListedNames($event)"
       />
+      <div class="error" *ngIf="nameCtrl?.errors?.required && (nameCtrl?.touched || formRef.submitted)">Toto pole je povinne</div>
+      <div class="error" *ngIf="nameCtrl?.errors?.pattern && (nameCtrl?.touched || formRef.submitted)">Nepovolene znaky</div>
+      <div class="error" *ngIf="nameCtrl?.errors?.blackListed && (nameCtrl?.touched || formRef.submitted)">Toto meno je zakazane</div>
     </div>
+
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input
+          class="form-input"
+          type="text"
+          name="email"
+          [(ngModel)]="user.email"
+          placeholder="E-mail"
+          required
+          #emailCtrl="ngModel"
+        />
+        <div class="error" *ngIf="emailCtrl?.errors?.required && (emailCtrl?.touched || formRef.submitted)">Toto pole je povinne</div>
+      </div>
+
+      <button type="submit" class="form-btn" [disabled]="formRef?.invalid">Odeslat</button>
   </form>
 </div>
 
