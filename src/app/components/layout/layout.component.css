@@ -4,13 +4,31 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: white;
 }
 
 .sidenav {
     height: 100%;
-    min-width: 260px;
-    border: 0px;
-    background-color: #faf9fd;
-    box-shadow: 0px 2px 4px -1px;
+    max-width: 260px;
+    border: 0;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.05);
+    /* Jemné stíny pro větší hloubku */
+    border-radius: 0px;
+}
+
+.toolbar {
+    background-color: var(--mat-sys-primary);
+    color: var(--mat-sys-on-primary);
+}
+
+.mat-icon {
+    color: var(--mat-sys-on-primary);
+}
+
+.toolbar-header {
+    background-color: white;
+}
+
+.logo {
+    margin: 16px;
+    font-weight: bold;
 }

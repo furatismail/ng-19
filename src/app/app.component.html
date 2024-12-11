@@ -1,24 +1,24 @@
 <app-layout>
   <div menu>
-    <nav class="center">
-      <a class="button" routerLink="/dashboard"> Dashboard </a> |
-
-      <a class="button" routerLink="/about"> About </a> |
-
-      <a class="button" routerLink="/reporting"> Reporting </a> |
-
-      <a class="button" routerLink="/settings"> Settings </a> |
-
-      <a class="button" routerLink="/user"> User form </a> |
-
-      <a class="button" routerLink="/detail"> Users </a> |
-
-      <a class="button" routerLink="/reactive-user"> Reactive user form </a> |
-
-      <a class="button" routerLink="/skills"> Skills </a> |
+    <nav class="nav-wrap">
+      <mat-nav-list>
+        <mat-list-item routerLink="/dashboard">Dashboard</mat-list-item>
+        <mat-list-item routerLink="/about">About</mat-list-item>
+        <mat-list-item routerLink="/reporting">Reporting</mat-list-item>
+        <mat-list-item routerLink="/settings">Settings</mat-list-item>
+        <mat-list-item routerLink="/user">User form</mat-list-item>
+        <mat-list-item routerLink="/detail">Users</mat-list-item>
+        <mat-list-item routerLink="/reactive-user"
+          >Reactive user form</mat-list-item
+        >
+        <mat-list-item routerLink="/skills">Skills</mat-list-item>
+      </mat-nav-list>
     </nav>
   </div>
+
   <div content>
-    <router-outlet></router-outlet> 
+    <mat-card class="card-wrap">
+      <router-outlet></router-outlet>
+    </mat-card>
   </div>
 </app-layout>
