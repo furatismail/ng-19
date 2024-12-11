@@ -4,6 +4,8 @@
     <mat-sidenav class="sidenav" mode="side" [(opened)]="opened" #snav>
         <mat-toolbar class="example-toolbar">
           </mat-toolbar>
+          <ng-content select="[menu]"></ng-content>
+
     </mat-sidenav>
 
     <!-- hlavni obsah -->
@@ -12,7 +14,7 @@
             <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
             Logo
           </mat-toolbar>
-        Main content
+        <ng-content select="[content]"></ng-content>
     </mat-sidenav-content>
 
   </mat-sidenav-container>
