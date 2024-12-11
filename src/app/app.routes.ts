@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './views/home';
+import { UserComponent } from './views/form/user/user.component';
 
 export const routes: Routes = [
     {
@@ -23,5 +24,9 @@ export const routes: Routes = [
         path: "settings",
         loadChildren: () => import('./views/settings/settings.routes').then(routes => routes.SettingsRoutes)
     },
-    
+    {
+        path: "user",
+        component: UserComponent
+    },
+
 ];

@@ -1,0 +1,22 @@
+<div class="form-container">
+  <h1>Template driven form</h1>
+  <form>
+    <div class="form-group">
+      <label for="name">Meno</label>
+      <input
+        class="form-input"
+        type="text"
+        name="fullname2"
+        [(ngModel)]="user.name"
+        placeholder="Celé meno"
+      />
+    </div>
+  </form>
+</div>
+
+<!-- [ngModel]="fullname"
+(ngModelChange)="fullname = $event" 
+
+===
+
+[(ngModel)]="fullname" -->
