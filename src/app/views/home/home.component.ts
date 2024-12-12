@@ -3,22 +3,29 @@ import { CardComponent } from '../../components/card/card.component';
 import { Film } from '../../shared/interfaces/film.interface';
 import { JsonPipe } from '@angular/common';
 import { DataSharingService } from '../../shared/services/data-sharing/data-sharing.service';
+import { IconPipe } from '../../shared/pipes/icon.pipe';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-home',
-  imports: [CardComponent, JsonPipe],
+  imports: [CardComponent, JsonPipe, IconPipe, MatIconModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent {
+
+
+
   films = [
     {
       id: 1,
-      name: 'Predator 1'
+      name: 'Predator 1',
+      inStock: true
     },
     {
       id: 2,
-      name: 'Predator 2'
+      name: 'Predator 2',
+      inStock: false
     }
   ];
 

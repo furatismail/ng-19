@@ -4,6 +4,9 @@
 <div class="box">
   @for (film of films; track $index) {
     <app-card [title]="film.name" [id]="film.id" (cardClicked)="onCardClicked($event)"></app-card>
+
+    {{film.inStock | icon}}: <br>
+    <mat-icon>{{film.inStock | icon}}</mat-icon>
   }
 
   {{cart | json}}

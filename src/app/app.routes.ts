@@ -7,12 +7,14 @@ import { HomeComponent } from './views/home';
 import { LoginComponent } from './views/login/login.component';
 import { SkillsFormComponent } from './views/skills/skills.component';
 import { DetailComponent } from './views/users/detail/detail.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 export const routes: Routes = [
 
     {
         path: 'system',
         component: ContentComponent,
+        // canActivate: [AuthGuard],
         children: [
             {
                 path: "",
@@ -21,7 +23,7 @@ export const routes: Routes = [
             },
             {
                 path: "dashboard",
-                component: HomeComponent
+                component: HomeComponent,
             },
             {
                 path: "about",
@@ -45,7 +47,7 @@ export const routes: Routes = [
             },
             {
                 path: "reactive-user",
-                component: ReactiveUserComponent
+                component: ReactiveUserComponent,
             },
             {
                 path: "skills",
@@ -54,15 +56,21 @@ export const routes: Routes = [
         ]
     },
     {
-        path: '',
+        path: 'login',
         component: BlankComponent,
         children: [
             {
                 path: "",
                 component: LoginComponent
-            },
+            }
+            
         ]
-    }
+    },
+    {
+        path: "",
+        redirectTo: "login",
+        pathMatch: "full"
+    },
    
 
 ];
