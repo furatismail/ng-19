@@ -1,0 +1,26 @@
+
+
+<app-layout>
+  <div menu>
+    <nav class="nav-wrap">
+      <mat-list>
+        <mat-list-item routerLink="dashboard"> Dashboard </mat-list-item>
+        <mat-list-item routerLink="about"> About </mat-list-item>
+        <mat-list-item routerLink="reporting"> Reporting </mat-list-item>
+        <mat-list-item routerLink="settings"> Settings </mat-list-item>
+        <mat-list-item routerLink="user"> User form </mat-list-item>
+        <mat-list-item routerLink="detail"> Users </mat-list-item>
+        <mat-list-item routerLink="reactive-user"
+          >Reactive user form</mat-list-item
+        >
+        <mat-list-item routerLink="skills"> Skills </mat-list-item>
+      </mat-list>
+    </nav>
+  </div>
+
+  <div content>
+    <mat-card class="card-wrap">
+      <router-outlet></router-outlet>
+    </mat-card>
+  </div>
+</app-layout>
