@@ -1,0 +1,13 @@
+<p>Hledana hodnota: {{search()}}</p>
+
+<input type="text" (input)="setSearchString($event)">
+
+<hr>
+
+@for (filteredUser of filteredUsers(); track $index) {
+    {{filteredUser.name}} <br>
+}
+
+<hr>
+
+<button (click)="addUser()">Pridat uzivatele</button>
