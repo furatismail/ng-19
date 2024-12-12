@@ -5,10 +5,11 @@ import { JsonPipe } from '@angular/common';
 import { DataSharingService } from '../../shared/services/data-sharing/data-sharing.service';
 import { IconPipe } from '../../shared/pipes/icon.pipe';
 import { MatIconModule } from '@angular/material/icon';
+import { HighlightDirective } from '../../shared/directives/highlight.directive';
 
 @Component({
   selector: 'app-home',
-  imports: [CardComponent, JsonPipe, IconPipe, MatIconModule],
+  imports: [CardComponent, JsonPipe, IconPipe, MatIconModule, HighlightDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
